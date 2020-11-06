@@ -1,0 +1,20 @@
+{{- if .Parent }}
+    <div class="nav" >
+        <ol class="breadcrumb">
+            {{- template "crumb" .Page -}}
+        </ol>
+    </div>
+{{- end }}
+
+{{ define "crumb" }}
+    {{- if .Parent }}
+        {{- template "crumb" .Parent }}
+    {{- end }}
+    {{- if .Content -}}
+        <li>
+            <a href="{{ .RelPermalink }}">{{ partial "docs/title" . }}</a>
+        </li>
+    {{- else -}}
+        <li>{{ partial "docs/title" . }}</li>
+    {{- end -}}
+{{ end }}

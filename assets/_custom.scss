@@ -1,0 +1,24 @@
+// @import "plugins/numbered"; // adds section header numbrs within each page
+// @import "plugins/scrollbars"; // forces scrollbar styles to be the same across browsers
+
+.breadcrumb {
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  list-style: none;
+  background-color: $gray-100;
+  border-radius: 4px;
+}
+.breadcrumb > li {
+  display: inline-block;
+}
+.breadcrumb > li + li:before {
+  padding: 0 5px;
+  color: #ccc;
+  content: "/\00a0";
+}
+.breadcrumb > .active {
+  color: $color-link;
+}
+.breadcrumb a {
+  color: $color-link;
+}
